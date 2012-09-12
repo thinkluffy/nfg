@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block topbar %}
+{% endblock %}
+
+{% block content %}
+    
+    <ul class="feeds">
+    {% for feed in feeds.data %}
+        <li>
+        <div style="border-bottom:1px solid #D8DFEA; padding-bottom:5px; margin:10px 10px 5px 0;">
+			<div style="float:left;">
+                <a href="https://www.facebook.com/profile.php?id={{feed.from.id}}" target="_top">
+                    <img src="https://graph.facebook.com/{{feed.from.id}}/picture">
+                </a>
+            </div>
+			<div style="float:left; margin-left:10px; width: 650px;">
+                <div>
+				    <a href="https://www.facebook.com/profile.php?id={{feed.from.id}}" target="_top">{{feed.from.name}}</a>
+                    <span style="color: #D3D1D1; font-size: 11px">{{feed.created_time}}</span>
+                </div>
+
+                <div>
+                    {% if not feed.secure %}
+                    <img style="display: block; float: left; margin-right:20px;" src="static/images/warning_icon.png" />
+                    {% endif %}
+
+                    {% if feed.type == 'link' %}
+                    <div style="padding-top:3px;">{{feed.link}}</div>
+                    {% else %}
+                    <div style="padding-top:3px;">{{feed.message}}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div style="height: 0px; clear: both" />
+        <!--
+            <img src='https://graph.facebook.com/{{feed.from.id}}/picture'/>
+            from: {{feed.from.name}} with id {{feed.from.id}}<br/>
+            id: {{feed.id}}, message: {{feed.message}}
+         -->
+        </li>
+    {% endfor %}
+    </ul>
+    
+{% endblock %}
+  

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block topbar %}
+
+
+  <div id="fb-root"></div>
+  <h1>Welcome</h1>
+  <div id="login-flow">
+    <fb:login-button perms="email,offline_access,read_stream,publish_actions" show-faces="true"></fb:login-button>
+    
+    <!--
+    <a target="_top" href="https://www.facebook.com/dialog/oauth/?client_id={{app_id}}&redirect_uri=https%3A%2F%2Fapps.facebook.com%2F{{name}}%2F&scope=COMMA_SEPARATED_LIST_OF_PERMISSION_NAMES">Authenticate Me!</a>
+    -->
+    
+  </div>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+
+    <!-- We get the name of the app out of the information fetched -->
+    <title>{{ name }}</title>
+    <link rel="stylesheet" href="static/screen.css" media="Screen" type="text/css" />
+    <link rel="stylesheet" href="static/mobile.css" media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css" />
+
+    <!--[if IEMobile]>
+      <link rel="stylesheet" href="static/mobile.css" media="screen" type="text/css"  />
+    <![endif]-->
+
+    <!-- These are Open Graph tags.  They add meta data to your  -->
+    <!-- site that facebook uses when your content is shared     -->
+    <!-- over facebook.  You should fill these tags in with      -->
+    <!-- your data.  To learn more about Open Graph, visit       -->
+    <!-- 'https://developers.facebook.com/docs/opengraph/'       -->
+    <meta content="" property="og:title" />
+    <meta content="" property="og:type" />
+    <meta content="" property="og:url" />
+    <meta content="" property="og:image" />
+    <meta content="" property="og:site_name" />
+    <meta property="og:description" content="My First App" />
+    <meta content="{{app_id}}" property="fb:app_id" />
+
+    <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+      
+    <!--[if IE]>
+      <script type="text/javascript">
+        var tags = ['header', 'section'];
+        while(tags.length)
+          document.createElement(tags.pop());
+      </script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div style="font-size: 20px; font-weight: bold;">{{name}}</div>
+    <div style="margin-bottom: 20px; margin-left: 200px;">Demo Facebook app to scan news feed and warn</div>
+
+    {% block topbar %}
+    {% endblock %}
+      
+    {% block content%}
+    {% endblock %}
+  </body>
+</html>

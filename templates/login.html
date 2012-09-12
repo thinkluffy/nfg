@@ -1,0 +1,8 @@
+<script>
+ 	var oauth_url = 'https://www.facebook.com/dialog/oauth/';
+ 	oauth_url += '?client_id={{app_id}}';
+ 	oauth_url += '&redirect_uri=' + encodeURIComponent('https://apps.facebook.com/{{namespace}}/');
+ 	oauth_url += '&scope=email,offline_access,read_stream,publish_actions'
+
+  	window.top.location = oauth_url;
+</script>
